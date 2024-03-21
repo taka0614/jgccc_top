@@ -1,0 +1,2204 @@
+@charset "utf-8";
+
+/* 
+font-family: 'DM Sans', sans-serif;
+font-family: 'M PLUS Code Latin', monospace;
+font-family: 'Noto Sans JP', sans-serif; 
+*/
+
+/* ---------------------------------- */
+/* ページ全体 */
+/* ---------------------------------- */
+/* 基本的に Noto Sans JP 400の18pxフォント */
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/* 箇条書き部分は点はなし。 */
+html ul {
+    list-style: none;
+}
+
+/* 基本的に下線による飾りつけはない。 */
+a {
+    text-decoration: none;
+}
+
+/* 対応言語でない場合は見せない */
+html[lang='ja'] *:is([lang]):not([lang='ja']),
+html[lang='en'] *:is([lang]):not([lang='en']) {
+    display: none !important;
+}
+
+/* メイン */
+main {
+    position: relative;
+}
+
+.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: 50vh;
+  }
+
+.slider-img img {
+    width: 100%;
+    height: 100vh;
+}
+
+ul.slick-dots {
+    position: absolute;
+    z-index: 10;
+    bottom: -65%;
+}
+
+/* ヘッダーのロゴの赤い部分 */
+/* トップページの場合 */
+header.top::before {
+    content: url("img/Top-RedRectangle-pc.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ニュースページの場合 */
+header.news::before {
+    content: url("img/News-RedRectangle-logo-pc.svg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* ヘッダー：日揮触媒化成のロゴ */
+/* 日揮触媒化成のロゴの配置、ヘッダーの中心に置く */
+div.logo-container {
+    align-self: center;
+    z-index: 2;
+    top: 38px;
+    left: 40px;
+}
+
+/* ヘッダー：ナビ（現在、レスポンシブル対応はしていない） */
+.header-navigation {
+    align-self: center;
+}
+
+/* ナビの2つのリストは縦に並べる */
+.header-navigation div {
+    justify-content: flex-end;
+}
+
+.header-navigation li {
+    display: inline;
+    align-self: center;
+}
+
+/* ナビの中身は a タグなので、改めて設定する。 */
+.header-navigation li a {
+    color: #fff;
+}
+
+/* ナビ：お問い合わせと英語 */
+.header-navigation-contact {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.header-navigation-contact li {
+    margin-left: 26px;
+}
+
+/* ナビのリストの中のメール、地球アイコンのサイズ */
+.header-navigation-contact img {
+    width: 13px;
+    height: auto;
+}
+
+/* ナビのリストの言語 */
+.header-navigation-contact button {
+    border: none;
+    background: none;
+    color: #fff;
+}
+
+/* ナビのリスト：flex で横並びにして、ウィンドウ幅に応じて2段にする */
+.header-navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-navigation-list li {
+    margin-left: 40px;
+}
+
+/* ヘッダー：ナビ リストの中の虫眼鏡アイコンのサイズ */
+img.header-navigation-list-search-pc {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+img.header-navigation-list-search-sp {
+    display: none;
+}
+
+/* ヘッダー：ハンバーガーメニュー pcの場合非表示 */
+button.header-hamburger {
+    display: none;
+}
+
+/* ヘッダー：トップページの背景（地球） 
+header.top {
+    background-image: url("./img/background-top.png");
+    background-position-y: 11.67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 857px;
+    width: 100%;
+    aspect-ratio: 1920 / 857;
+} */
+
+/* ヘッダー：ニュースページの背景（工場） */
+header.news {
+    background-image: url("img/background-news.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 3840 / 1320;
+}
+
+/* ヘッダー：ニュースページの透過黒 */
+/* ヘッダーはある程度の高さになるように調整 */
+header.news div.opacity-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* height: 660px; */
+    aspect-ratio: 1920 / 660;
+    min-height: 450px;
+    max-width: 100%;
+}
+
+/* ヘッダー：サムネイルタイトル */
+section.thumbnail {
+    padding-left: 10.67%;
+}
+
+/* トップページ：ナノから世界を変える */
+.bg-slider_title {
+    position: absolute;
+    display: block;
+    color: #fff;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 112px;
+    padding-top: 15%;
+    padding-left: 5%;
+    width: 800px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* トップページ：S&G（未完成） */
+/* p.thumbnail-english {
+    font-family: DM Sans;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0.02em;
+    margin-left: 848px;
+    padding-right: 20%;
+    text-align: right;
+} */
+
+
+/* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+section.news-thumbnail {
+    /* width: 41.56%; */
+    max-width: 798px;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 89.6px;
+    padding-top: 72px;
+}
+
+/* お知らせ：検索エリアがつく場合、space-between */
+section.news-search-thumbnail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding-right: 40px;
+}
+
+/* お知らせ - 検索エリア pc */
+section.news-search-thumbnail input {
+    width: 23.95%;
+    min-width: 300px;
+    height: 41px;
+    border-radius: 44px;
+    border: 1px;
+    box-shadow: 0px 0px 20px 0px #00000026;
+    background-image: url("img/Icon-search-gray.svg");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    font-size: 24px;
+    padding-left: 15px;
+}
+
+/* ----------------------------- */
+/* トップページ：ニュース一覧 */
+/* ----------------------------- */
+
+/* トップページのボタンの境界線、テキストの設定 */
+/* 背景が白の場合のボタンの境界線とフォント（黒） */
+
+.mouse-button {
+    display: flex;
+    align-items: center;
+    width: 270px;
+    height: 70px;
+    border-radius: 35px;
+    border: 2px solid #333;
+    /* margin-top: 34px;
+    margin-bottom: 83px; */
+    position: relative;
+}
+
+.mouse-button p {
+    margin: 22px auto 22px 37px;
+    color: #333;
+    text-decoration: none;
+}
+
+/* 背景が黒の場合のボタンの境界線とフォント（白） */
+.mouse-button-wh {
+    min-width: 270px;
+    width: 270px;
+    height: 70px;
+    border-radius: 35px;
+    border: 2px solid #fff;
+    align-items: center;
+}
+
+.mouse-button-wh p {
+    color: #fff;
+}
+
+a.mouse-button.mouse-button-wh img , .mouse-button.slogan-button img , .mouse-button img {
+    margin-right: 1rem;
+}
+
+.mouse-button.slogan-button , .sustainability-button {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+/* 見出し */
+/* 見出しのフォント設定 */
+main.top h1 {
+    font-family: DM Sans;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    display: flex;
+    margin-bottom: 3rem;
+}
+
+/* 見出しに使う赤横線 */
+/*
+main.top h1::before {
+    content: url(./img/heading-redrectangle.svg);
+}
+    この手法だと高さ方向やや上にズレて表示されるので下記の手法に変更
+    2024/02/07 by SP 版整形担当者
+*/
+
+/* 見出しに使う赤横線を中心に動かす */
+main.top h1 div {
+    display: flex;
+}
+
+main.top h1 div img {
+    align-self: start;
+    margin-right: 10px;
+}
+
+/* ニュースのセクションタグを基準に貼り付ける */
+section.top-news {
+    position: relative;
+    z-index: 2;
+    /* height: 180px; */
+}
+
+div.top-news-container {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5% 3%;
+}
+
+div.top-news-container ul li {
+    display: flex;
+    align-items: baseline;
+    line-height: 40px;
+}
+
+div.top-news-container ul li time {
+    line-height: 70px;
+    margin-right: 30px;
+}
+
+div.top-news-container ul li a {
+    color: #fff;
+}
+
+
+/* ----------------------------- */
+/* トップページ：製品群一覧 */
+/* ----------------------------- */
+
+/* 背景：黒、フォント：白 */
+section.top-product {
+    background-color: #2B2D2E;
+    color: #fff;
+    position: relative;
+    padding-bottom: 200px;
+}
+
+/* 製品群一覧の大きさ調整pc */
+div.top-product-container {
+    padding: 10% 10% 5%;
+}
+
+/* 見出しを通る赤い曲線をsection-top-productを基準に張り付け */
+img.top-product-heading-curve {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+/* 二つ並んだコンテナの設定 */
+div.top-product-container-2items {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #707070;
+}
+
+div.top-product-container-2items>div {
+    padding-bottom: 80px;
+}
+
+/* 製品群一覧の２コンテナ：画像グループ */
+div.top-product-container-img {
+    width: 100%;
+    aspect-ratio: 1360 / 786;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* 製品群一覧の画像：透過率と縦横の比率設定 */
+img.top-product-img {
+    opacity: 33%;
+    aspect-ratio: 1360 / 786;
+}
+
+/* 製品群一覧の画像：画像に重ねる画像文字の設定 */
+img.top-product-logo {
+    opacity: 78%;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/* 画像の下にある説明 */
+div.top-product-container-explain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div.top-product-container-explain > p {
+    line-height: 2rem;
+}
+
+/* 全体の並びは縦、幅は親の50％ */
+div.top-product-container-2items>div {
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+}
+
+/* 製品群一覧：二つ並んだコンテナにあるボタン */
+/* ボタンはdiv内で右に置く、下のパディングは消す */
+div.top-product-container-2items a.mouse-button {
+    align-self: flex-end;
+    margin-bottom: 0;
+}
+
+/* 製品群一覧：二つ並んだコンテナにある画像 */
+div.top-product-container-2items img.top-product-img {
+    width: 100%;
+    height: auto;
+}
+
+/* 製品群一覧：縦に２つ並んだコンテナ */
+div.top-product-container-item {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    padding: 38px 0 55px;
+}
+
+h2.top-product-heading.en {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100px;
+    letter-spacing: 0.02em;
+}
+
+div.top-product-container-item h2 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 0.02em;
+    margin: 28px 0 20px;
+}
+
+/* トップページ：製品 罫線について */
+div.top-product-container-item:not(:last-child) {
+    border-bottom: 1px solid #707070;
+}
+
+/* section.top-productを基準にsvg画像の貼り付け */
+.top-product-vector {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.top-product-curve {
+    width: 100%;
+    bottom: 148.16px;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.top-product-fillvector {
+    width: 100%;
+    bottom: 172.01px;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+/* ----------------------------- */
+/* トップページ：日揮触媒のスローガン */
+/* ----------------------------- */
+
+/* 背景画像 */
+
+div.top-slogan-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+    margin-top: 5%;
+}
+
+/* 左コンテナ：文章、右コンテナ：画像 */
+div.top-slogan-left {
+    width: 65%;
+    padding: 0 5%;
+}
+
+div.top-slogan-right {
+    width: 35%;
+}
+
+/* スローガンのフォント設定 */
+p.top-slogan-left-sentence {
+    font-family: M PLUS Code Latin;
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 99px;
+    letter-spacing: 0.02em;
+}
+
+/* スローガン（英語）の赤字部分 */
+p.top-slogan-left-sentence span {
+    color: #bc0000;
+}
+
+
+/* 日揮触媒化成の化成ロゴ */
+
+
+div.top-slogan-left-fine {
+    margin-top: 1rem;
+    display: flex;
+    align-items: last baseline;
+}
+
+/* フリガナ、ファイン */
+div.top-slogan-left-kasei p {
+    font-family: M PLUS Code Latin;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 45px;
+    text-align: center;
+}
+
+/* 社名から触媒だけの会社だと思われがち・・・ */
+div.top-slogan-left > p.top-slogan-left-explain {
+    line-height: 1.5rem;
+}
+
+/* 日揮触媒化成の顕微鏡の画像 */
+div.top-slogan-right {
+    position: relative;
+}
+
+.top-slogan-right img {
+    width: 100%;
+    height: 130%;
+    margin-top: -20%;
+    object-fit: cover;
+}
+
+/* ----------------------------- */
+/* トップページ：4つの事業と展望 */
+/* ----------------------------- */
+
+section.top-business {
+    margin-top: 165px;
+    position: relative;
+}
+
+/* 幅の設定 */
+div.top-business-container {
+    position: relative;
+    padding: 0 10%;
+}
+
+/* 見出し設定 */
+div.top-business-container h1 {
+    margin-top: 87px;
+    margin-bottom: 64px;
+}
+
+div.top-business-container h1 br.isPC {
+    display: none;
+}
+
+div.top-business-container>p {
+    margin-bottom: 174px;
+    width: 60%;
+}
+
+/* 2人の研究者の画像 */
+img.top-business-2person {
+    position: absolute;
+    top: -87px;
+    right: 10.41%;
+    width: 30%;
+}
+
+/* h2見出しのフォント */
+section.top-business h2 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+    text-wrap: nowrap;
+}
+
+/* サステナビリティの部分、ここだけ調整が必要だった */
+section.top-business h2.top-business-envheading {
+    font-size: 32px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+}
+
+span.top-business-envheading-dot {
+    letter-spacing: -0.28em;
+}
+
+/* 英語見出しのフォント */
+section.top-business h3 {
+    font-family: DM Sans;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.08em;
+}
+
+/* トップページ：4つの事業と展望 横４つに並んだコラム */
+div.top-four-business {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+/* 4つに並んだコラムでのコンテナ設定 */
+div.top-business-item {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 4);
+    padding: 0 10px;
+}
+
+div.top-business-item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4つに並んだコラムでのコンテナ内の画像と文字 */
+div.top-business-item-img {
+    position: relative;
+}
+
+/* 画像の左上に赤四角と白文字 */
+div.top-business-item-img p {
+    position: absolute;
+    background-color: #BC0000;
+    color: #fff;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+    padding: 6px 9px 6px 9px;
+    top: 0;
+    left: 0;
+}
+
+/* コラムにある画像のサイズ、コラム幅に合わせる */
+.isPC {
+    width: 100%;
+    height: auto;
+}
+div.top-business-item img.isSP {
+    display: none;  /* SP 版を非表示、PC 版は放っておけば表示される */
+}
+    /* PC 版の css を基準に SP 仕様を上書きする構成のようなので */
+    /* 美しくないなぁと思いつつもこういう記述にするしか・・・   */
+    /* 2024.02.09 by SP 版整形担当者                        */
+
+/* トップページ：4つの事業と展望 サステナビリティ*/
+div.top-sustainability {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 200px;
+    padding-left: 10%;
+}
+
+div.top-sustainability-explain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.top-sustainability-img {
+    padding-left: 5%;
+}
+
+/* サステナビリティの風車画像 */
+/* ページの右側に合わせるようにする */
+
+
+div.top-sustainability img.isSP {
+    display: none;  /* SP 版を非表示、PC 版は放っておけば表示される */
+}
+    /* PC 版の css を基準に SP 仕様を上書きする構成のようなので */
+    /* 美しくないなぁと思いつつもこういう記述にするしか・・・   */
+    /* 2024.02.09 by SP 版整形担当者                        */
+
+/* トップページ：フッターのうえに張り付ける赤い曲線 */
+.top-group-footer1 {
+    position: absolute;
+    width: 100%;
+    bottom: -255px;
+    z-index: 0;
+}
+
+.top-group-footer2 {
+    position: absolute;
+    width: 100%;
+    bottom: -230px;
+    z-index: 0;
+}
+
+
+/* ----------------------------------- */
+/* NEWS */
+/* ----------------------------------- */
+
+/* ----------------------------------- */
+/* NEWS：ニュースリスト */
+/* ----------------------------------- */
+section.news-part {
+    display: flex;
+    padding-bottom: 172px;
+    background: linear-gradient(180deg, #2F3033 0%, #635E5C 100%);
+}
+
+div.news-list-container {
+    background: #fff;
+    margin-left: 205px;
+}
+
+div.news-list-container li {
+    height: 92px;
+}
+
+/* 左側にパディングを入れる */
+div.background {
+    width: 10.67%;
+    position: relative;
+    z-index: 5;
+}
+
+/* ニュース一覧 */
+div.news-list {
+    background-color: #fff;
+    position: relative;
+    z-index: 7;
+    flex-basis: 89.33%;
+    margin-top: -94px;
+}
+
+/* ニュース一覧の文 */
+div.news-list ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 93px;
+}
+
+/* ニュース一覧の行 */
+/* 行全体でクリック可能 */
+li.news-list-item {
+    /* display: flex;
+    align-items: center; */
+    align-self: center;
+    line-height: 40px;
+    width: 81.63%;
+    max-width: 1400px;
+    height: 96px;
+}
+
+a.news-list-item-container {
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a.news-list-item-container:hover {
+    background-color: rgba(0, 0, 0, 0.149);
+}
+
+a.news-list-item-container div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    color: #000;
+}
+
+a.news-list-item-container time {
+    font-weight: 700;
+    margin-right: 9.14%;
+}
+
+/* ニュースタイトル */
+/* 二行以上だと省略する。 */
+a.news-list-item-container p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    padding-right: 55px;
+}
+
+img.news-list-item-arrow {
+    position: absolute;
+    top: 40px;
+    right: 16px;
+}
+
+/* 次、前、1，2，3、...にアクセスするリンクボタン */
+li.news-list-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 256px;
+    /* padding: 0 auto; */
+}
+
+/* リンクボタンの形状 */
+li.news-list-links a {
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px;
+    margin: 0 14px;
+    border-radius: 52px;
+}
+
+/* 現在位置を表す色 */
+li.news-list-links .news-list-now {
+    background-color: #707070;
+    border: 1px solid #707070;
+}
+
+/* 前、あとなどの色 */
+li.news-list-links .news-list-one-previous,
+.news-list-one-next,
+.news-list-previous,
+.news-list-next {
+    background-color: #E4E4E4;
+    border: 1px solid #E4E4E4;
+}
+
+/* マウスオーバー時の色変化 */
+li.news-list-links a:hover {
+    background-color: #707070;
+    border: 1px solid #707070;
+}
+
+/* ニュース一覧の下境界線、最後のみ下境界線なし */
+div.news-list ul li:not(:last-child) {
+    border-bottom: 1px solid #e4e4e4;
+}
+
+div.list-container-items ul li time {
+    line-height: 70px;
+    margin-right: 30px;
+}
+
+div.list-container-items ul li a {
+    color: #333;
+}
+
+/* お知らせ-詳細ページ（個別ニュース） */
+/* ニュース一覧 */
+div.news-article {
+    background-color: #fff;
+    padding-top: 107px;
+    padding-left: 6%;
+    padding-right: 10%;
+    position: relative;
+    z-index: 7;
+    flex-basis: 89.33%;
+    margin-top: -94px;
+}
+
+/* ニュース記事の時間 */
+.news-article-time {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-bottom: 73px;
+}
+
+/* ニュース記事の題名 */
+.news-article-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 121px;
+}
+
+/* ニュース記事本文 */
+.news-article-sentence p {
+    line-height: 29px;
+    margin-bottom: 174px;
+}
+
+/* ボタン */
+.news-article-links {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 162px;
+}
+
+/* 記事：二行以上だと省略 */
+.news-article-links p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.news-article-links-button {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    width: 260px;
+    height: 100px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    color: #333;
+}
+
+/* ----------------------------------- */
+/* 製品群一覧 */
+/* ----------------------------------- */
+
+/* div.background を利用 */
+
+/* ----------------------------------- */
+/* 製品群一覧：？？？？？？ */
+/* ----------------------------------- */
+
+body.product {
+    background: linear-gradient(180deg, #2F3033 0%, #635E5C 100%);
+}
+
+section.product-part {
+    display: flex;
+    padding-bottom: 280px;
+}
+
+/* 製品群一覧：全体 */
+div.product-list {
+    background-color: #fff;
+    position: relative;
+    z-index: 7;
+    flex-basis: 89.33%;
+    /* padding: 80px 18.42% 0 5.26%; */
+    padding: 80px 13.15% 0 0;
+    /* margin-top: -94px; */
+}
+
+div.product-list h2 {
+    display: block;
+    font-family: Noto Sans JP;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 28px;
+    background-color: #EFEFEF;
+    width: 100%;
+    height: 57px;
+}
+
+/* 触媒、化成によるタブ */
+div.product-tab {
+    display: flex;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 40px;
+    text-align: center;
+    margin: 0 6.06% 54px;
+}
+
+/* タブそれぞれの設定 */
+div.product-tab>button {
+    width: 50%;
+    color: #707070;
+    padding-bottom: 34px;
+    border: none;
+    border-bottom: 7px solid #707070;
+    background: none;
+}
+
+/* 選択されているタブ */
+div.product-tab>button.product-selected {
+    color: #bc0000;
+    border-bottom: 7px solid #bc0000;
+}
+
+/* 選択名：プルダウンメニュー */
+div.product-search {
+    margin: 0 6.06% 54px;
+}
+
+div.product-search select {
+    color: #e4e4e4;
+    width: 45.94%;
+    height: 58px;
+    margin: 50px 0 77px;
+}
+div.product-search option {
+    color: #333;
+}
+
+/* 機能：アイテム */
+div.product-function h2 {
+    width: 87.88%;
+    margin: 0 6.06% 54px 6.06%;
+}
+
+div.product-item-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+}
+
+/* 画像 */
+div.product-item-list > a {
+    padding: 58px 0 80px 6.06%;
+}
+
+div.product-item {
+    width: 400px;
+}
+
+
+div.product-item > img {
+    width: 400px;
+    height: 223px;
+    margin-bottom: 20.59px;
+}
+/* 紹介 */
+div.product-item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+div.product-item-title p {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+
+/* ----------------------------------- */
+/* フッター */
+/* ----------------------------------- */
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color: #fff;
+    height: 280px;
+    position: relative;
+    z-index: 1;
+}
+
+/* フッター：日揮触媒化成の情報 */
+div.footer-information {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+
+/* フッター：ロゴ */
+div.footer-information img {
+    margin-bottom: 28.83px;
+}
+
+/* フッター：コピーライト */
+p.footer-information-copyright {
+    margin: 19px auto 19px 0;
+}
+
+
+/* フッター：ナビゲーション */
+div.footer-nav {
+    display: flex;
+}
+
+/* フッター：ナビゲーション */
+/* 一部はページがトップページかどうかで表示するか変化する */
+.footer-nav-list {
+    align-self: center;
+    display: flex;
+}
+
+.footer-nav-list div {
+    align-self: center;
+}
+
+.footer-nav-list li {
+    margin: 12px 28px;
+}
+
+.footer-nav-list li a {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: left;
+    color: #fff;
+}
+
+div.footer-nav-contact {
+    align-self: flex-end;
+    margin-bottom: 50px;
+}
+
+div.footer-nav-contact a {
+    display: block;
+    width: 168px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    position: relative
+}
+
+
+
+div.news-article-links-button {
+    display: flex;
+    align-items: center;
+}
+
+a.news-article-links-left div.news-article-links-button {
+    justify-content: flex-start;
+}
+
+a.news-article-links-right div.news-article-links-button {
+    justify-content: flex-end;
+}
+
+div.news-article-links-button-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 76px;
+}
+
+/* フッターのボタン */
+.footer-nav-contact p {
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: 0em;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* フッターのボタンにあるメールアイコン */
+.footer-nav-contact img {
+    width: 18.75px;
+    height: auto;
+    margin-right: 13.75px;
+}
+
+/* フッター：日揮触媒化成の情報 */
+/* spのコピーライト非表示 */
+.footer-information-copyright-sp {
+    display: none;
+}
+
+@media screen and (max-width: 599px) {
+
+    /* 全体フォント設定-sp */
+    html {
+        font-size: 16px;
+    }
+
+    .slider-img img {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .bg-slider_title {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        display: block;
+        color: #fff;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 30px;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+        padding: 0;
+    }
+
+    /* ヘッダーのロゴの赤い部分 */
+    /* トップページの場合、 */
+    header.top::before {
+        content: url("img/Top-RedRectangle-sp.svg");
+    }
+
+    /* ニュースページの場合 */
+    header.news::before {
+        content: url("img/News-RedRectangle-logo-sp.svg");
+    }
+
+    /* ヘッダー：日揮触媒化成のロゴ */
+    /* 日揮触媒化成のロゴの配置、ヘッダーの中心に置く */
+    div.logo-container {
+        width: 138px;
+        top: 40px;
+        left: 16px;
+    }
+
+    /* ヘッダー：ハンバーガーメニュー */
+    .header-links {
+        background-color: #000;
+        align-items: center;
+        padding-right: 20px;
+    }
+
+    .header-links nav {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        padding-top: 183px;
+        padding-bottom: 100px;
+        margin-top: -40px;
+        background-color: rgba( 0, 0, 0, 0.75 );
+        transform: translateX(100%);
+        transition: ease .4s;
+    }
+
+    .header-links nav.active {
+        transform: translateX(0%);
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        z-index: 999;
+    }
+
+    .header-navigation li:nth-child(-n+2) {
+        display: inline;
+    }
+
+    .header-links nav.active {
+        transform: translateX(0%);
+    }
+
+    /* ハンバーガーメニューのボタン */
+    button.header-hamburger {
+        display: inline;
+        width: 42px;
+        height: 42px;
+        background-color: transparent;
+        border-color: transparent;
+        z-index: 9999;
+    }
+
+    header.active {
+        z-index: 999;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        position: relative;
+        transition: ease .4s;
+        display: block;
+    }
+
+    .hamburger.active span {
+        background-color: white;
+    }
+
+    /* ヘッダー：ハンバーガーメニューのボタン */
+    .hamburger.ready span:nth-child(1) {
+        top: 0;
+    }
+
+    .hamburger.ready span:nth-child(2) {
+        margin: 6px 0;
+    }
+
+    .hamburger.ready span:nth-child(3) {
+        top: 0;
+    }
+
+    /* ヘッダー：ハンバーガーメニューのボタン操作 */
+    .hamburger.active span:nth-child(1) {
+        top: 5px;
+        transform: rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        top: -13px;
+        transform: rotate(-45deg);
+    }
+
+    /* ヘッダー：ハンバーガーメニューの表示 */
+    .header-navigation li {
+        display: block;
+        color: black;
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .header-navigation div:last-chid li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ヘッダー：ナビ（現在、レスポンシブル対応はしていない） */
+    .header-navigation {
+        display: flex;
+        flex-flow: column;
+    }
+
+    .header-navigation li {
+        display: inline;
+        align-self: center;
+    }
+
+    /* spタグでは背景は白なので黒で設定 */
+    /* ナビの中身は a タグなので、改めて設定する。 */
+    .header-navigation li a {
+        color: white;
+    }
+
+    /* ナビ：お問い合わせと英語 */
+    .header-navigation-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+    }
+
+    /* English  */
+    .header-navigation-contact li:nth-child(2) {
+        display: none;
+    }
+
+    /* ナビのリストの中のメール、地球アイコンのサイズ */
+    .header-navigation-contact img {
+        width: auto;
+        height: 1rem;
+    }
+
+    /* ナビのリスト：flex で横並びにして、ウィンドウ幅に応じて2段にする */
+    .header-navigation-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header-navigation-list li {
+        margin-left: 40px;
+    }
+
+    /* ヘッダー：ナビ リストの中の虫眼鏡アイコンのサイズ */
+    /* pc画像は非表示にして、sp画像を表示する。 */
+    img.header-navigation-list-search-pc {
+        display: none;
+    }
+/*
+    img.header-navigation-list-search-sp {
+        display: block;
+        width: 28px;
+        height: 28px;
+    }
+*/
+
+    /* ヘッダー：背景画像 */
+    /* ヘッダー-sp：トップページの背景（地球） */
+/* 
+    header.top {
+        background-position-y: 11.67%;
+    }
+*/
+
+    /* ヘッダー：ニュースページの透過黒 */
+    /* ヘッダーはある程度の高さになるように調整 */
+
+
+    /* ヘッダー-sp：ニュースページの背景（工場） */
+    header.news {
+        height: 224px;
+    }
+
+    /* ヘッダー：ニニュースページの透過黒 */
+    header.news div.opacity-cover {
+        height: 100%;
+    }
+
+    /* お知らせ、お知らせ-詳細 */
+    div.news-background {
+        display: none;
+    }
+
+    /* お知らせ-詳細ページ（個別ニュース） */
+    /* ニュース一覧 */
+    div.news-list {
+        flex-basis: 100%;
+        padding: 16px 25px 0 14px;
+        margin-top: -44px;
+    }
+
+    /* ニュース一覧の文 */
+    div.news-list ul {
+        margin-top: 30px;
+    }
+
+    /* ニュース一覧の行 */
+    /* 行全体でクリック可能 */
+    li.news-list-item {
+        /* font-size: 16px; */
+        line-height: 20px;
+        width: 100%;
+        height: 129px;
+    }
+
+    /* ----------------------------- */
+    /* トップページ：ニュース一覧 */
+    /* ----------------------------- */
+
+    /* トップページのボタンの境界線、テキストの設定 */
+    /* 背景が白の場合のボタンの境界線とフォント（黒） */
+    .mouse-button {
+        display: block;
+        margin-top: 1rem;
+        width: 100%;
+        height: 3rem;
+        border-radius: 35px;
+        border: 2px solid #333;
+        /* margin-top: 34px;
+        margin-bottom: 83px; */
+        position: relative;
+    }
+
+    .mouse-button p {
+        margin: 0.9rem auto 0.9rem 37px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* 背景が黒の場合のボタンの境界線とフォント（白） */
+    .mouse-button-wh {
+        margin-top: 1rem;
+        min-width: 270px;
+        width: 100%;
+        height: 3rem;
+        border-radius: 35px;
+        border: 2px solid #fff;
+    }
+
+    .mouse-button-wh p {
+        color: #fff;
+    }
+
+    /* ボタンの右にある赤丸の矢印アイコン */
+    .mouse-button p:after {
+        content: url("img/icon-arrow.svg");
+        position: absolute;
+        bottom: 0.7rem;
+        right: 26px;
+    }
+
+    a.news-list-item-container div {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 56px;
+    }
+
+    a.news-list-item-container p {
+        padding-right: 0;
+    }
+
+    li.news-list-item time {
+        /* margin-left: 56px; */
+        margin-bottom: 5px;
+    }
+
+    img.news-list-item-arrow {
+        position: absolute;
+        top: 54px;
+        left: 17px;
+    }
+
+    li.news-list-links {
+        /* flex-direction: row; */
+        height: 146px;
+    }
+
+    li.news-list-links a {
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        margin: 0 11.31px;
+        border-radius: 42px;
+    }
+
+    /* トップページ：ナノから世界を変える */
+    section.top-thumbnail {
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    section.thumbnail p {
+        width: 70%;
+        padding: 0 15%;
+    }
+
+    /* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+    section.news-thumbnail {
+        width: 100%;
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 0px;
+    }
+
+    section.news-part {
+        padding: 0 2.5% 60px;
+    }
+
+    section.news-search-thumbnail input {
+        display: none;
+    }
+
+    div.news-article {
+        flex-basis: 100%;
+        padding: 16px 25px 0 14px;
+        margin-top: -44px;
+    }
+
+    .news-article-time {
+        /* font-size: 16px; */
+        line-height: 50px;
+        margin-bottom: 0px;
+    }
+
+    .news-article-title {
+        font-size: 20px;
+        line-height: 32px;
+        margin-bottom: 13px;
+    }
+
+    .news-article-sentence {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+
+    /* ボタン-sp */
+    .news-article-links {
+        flex-direction: column;
+        padding-bottom: 62px;
+    }
+
+    .news-article-links-button {
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+        height: 77px;
+    }
+
+    a.news-article-links-left {
+        margin-bottom: 20px;
+    }
+
+    /* ボタン-sp */
+    /* 左にリンクするボタンの設定、flexで左寄せ */
+    a.news-article-links-left div.news-article-links-button {
+        justify-content: flex-start;
+    }
+
+    a.news-article-links-left div.news-article-links-button::before {
+        margin: 0 20px;
+    }
+
+    /* ボタン-sp */
+    /* 右にリンクするボタンの設定、flexで右寄せ */
+    a.news-article-links-right div.news-article-links-button {
+        justify-content: flex-end;
+    }
+
+    a.news-article-links-right div.news-article-links-button::after {
+        margin: 0 20px;
+    }
+
+    /* ニュースのセクションタグを基準に貼り付ける */
+/*    section.top-news {
+    }
+*/
+    div.top-news-container {
+        background-color: #000;
+        color: #fff;
+        flex-flow: column;
+            /* 縦積みに変更    */
+        padding: 0 1rem;
+    }
+
+    div.top-news-container-list {
+        flex-basis: auto;
+            /* PC 版では横幅を広げるのに必要だが、                                  */
+            /* SP 版では縦幅が広がりすぎる原因になってしまうために auto として打ち消し  */
+    }
+
+    div.top-news-container ul li {
+        display: flex;
+        flex-flow: column;
+        align-items: baseline;
+        line-height: 2rem;
+    }
+
+    div.top-news-container ul li time {
+        margin-top: 1rem;
+        line-height: 2rem;
+    }
+
+    div.top-news-container ul li a {
+        color: #fff;
+    }
+
+
+    /* ----------------------------- */
+    /* トップページ：製品群一覧 */
+    /* ----------------------------- */
+
+/* 背景：黒、フォント：白 */
+section.top-product {
+    background-color: #2B2D2E;
+    color: #fff;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+    /* 製品群一覧の大きさ調整pc */
+    div.top-product-container {
+        padding: 4rem 2rem 1rem;
+    }
+
+    /* ベクトルと重ねる必要があるためにpositionをrelativeにする */
+    div.top-product-container h1 {
+        padding-top: 0;
+        padding-bottom: 1rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* 二つ並んだコンテナの設定 */
+    div.top-product-container-2items {
+        flex-flow: column;
+        /* 縦積みに変更 */
+    }
+
+    div.top-product-container-2items>div {
+        padding-bottom: 40px;
+    }
+
+    /* 製品群一覧の２コンテナ：画像グループ */
+    div.top-product-container-img {
+        width: 100%;
+        aspect-ratio: 1360 / 786;
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    /* 製品群一覧の画像：透過率と縦横の比率設定 */
+    img.top-product-img {
+        opacity: 33%;
+        aspect-ratio: 1360 / 786;
+    }
+
+    /* 製品群一覧の画像：画像に重ねる画像文字の設定 */
+    img.top-product-logo {
+        opacity: 78%;
+        width: 50%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+    /* 画像の下にある説明 */
+    div.top-product-container-explain {
+        display: flex;
+        flex-direction: column;
+        /* 縦積みに変更 */
+        justify-content: space-between;
+    }
+
+    /* 全体の並びは縦、幅は親の50％ (PC) */
+    /* 全体の並びは縦、幅は親の100％ (SP) */
+    div.top-product-container-2items>div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* 製品群一覧：二つ並んだコンテナにあるボタン */
+    /* ボタンはdiv内で右に置く、下のパディングは消す */
+    div.top-product-container-2items a.mouse-button {
+        align-self: flex-end;
+        margin-bottom: 0;
+    }
+
+    /* 製品群一覧：二つ並んだコンテナにある画像 */
+    div.top-product-container-2items img.top-product-img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* 製品群一覧：縦に２つ並んだコンテナ */
+    div.top-product-container-item {
+        display: flex;
+        flex-direction: column;
+        /* align-items: flex-start; */
+        padding: 38px 0 55px;
+    }
+
+    h2.top-product-heading.en {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 100px;
+        letter-spacing: 0.02em;
+    }
+
+    div.top-product-container-item h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 60px;
+        letter-spacing: 0.02em;
+        margin: 0;
+    }
+
+    /* トップページ：製品 罫線について */
+    div.top-product-container-item:not(:last-child) {
+        border-bottom: 1px solid #707070;
+    }
+
+    /* section.top-productを基準にsvg画像の貼り付け */
+    .top-product-vector {
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .top-product-curve {
+        width: 100%;
+        bottom: 40px;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .top-product-fillvector {
+        width: 100%;
+        bottom: 40px;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    /* ----------------------------- */
+    /* トップページ：日揮触媒のスローガン */
+    /* ----------------------------- */
+
+    div.top-slogan-container {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        padding: 2rem 1rem;
+    }
+
+    /* 左コンテナ：文章、右コンテナ：画像 */
+    div.top-slogan-left {
+        width: 100%;
+        padding: 0;
+    }
+    div.top-slogan-right {
+        display: none;  /* SP では右柱自体を非表示に。              */
+                        /* 顕微鏡の画像は解説と「詳しく知る」の間に入る */
+    }
+
+    /* スローガンのフォント設定 */
+    p.top-slogan-left-sentence {
+        font-family: M PLUS Code Latin;
+        font-weight: 600;
+        line-height: initial;
+            /* 画面幅の狭い SP だと 360px、nowrap かけてもこれが限界 */
+        font-size: 2rem;
+        white-space: nowrap;
+        letter-spacing: 0em;
+    }
+
+    /* スローガン（英語）の赤字部分 */
+    p.top-slogan-left-sentence span {
+        color: #bc0000;
+    }
+
+
+    /* 日揮触媒化成の化成ロゴ */
+    .slogan-left-img {
+        width: 285px;
+        height: auto;
+    }
+
+    div.top-slogan-left-fine {
+        margin-top: 0rem;
+        display: flex;
+        align-items: last baseline;
+    }
+
+    /* フリガナ、ファイン */
+    div.top-slogan-left-kasei p {
+        font-family: M PLUS Code Latin;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 45px;
+        text-align: center;
+    }
+
+    /* 社名から触媒だけの会社だと思われがち・・・ */
+    div.top-slogan-left > p.top-slogan-left-explain {
+        line-height: 1.5rem;
+    }
+
+    /* 日揮触媒化成の顕微鏡の画像 */
+    img.top-slogan-right-img {
+        position: absolute;
+        aspect-ratio: 57 / 25;  /* 415 x 182 */
+        top: -10%;
+        right: 0;
+        z-index: 2;
+    }
+
+
+    /* ----------------------------- */
+    /* トップページ：4つの事業と展望 */
+    /* ----------------------------- */
+
+    section.top-business {
+        margin-top: 0px;
+            /* 指定キャンセル */
+        position: relative;
+    }
+
+    /* 幅の設定 */
+    div.top-business-container {
+        position: relative;
+        padding: 2rem 1rem;
+    }
+
+    /* 見出し設定 */
+    div.top-business-container h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+            /* 指定キャンセル */
+        font-size: 2rem;
+    }
+
+    div.top-business-container>p {
+        margin-bottom: 2rem;
+            /* 指定キャンセル */
+        width: 60%;
+        line-height: 1.5rem;
+    }
+
+    /* 2人の研究者の画像 */
+    img.top-business-2person {
+        position: absolute;
+        top: 9rem;
+            /* 見出しの分だけ下げる */
+        right: 0;
+            /* 指定キャンセル */
+        width: 40%;
+    }
+
+    /* h2見出しのフォント */
+    section.top-business h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 3rem;
+        letter-spacing: 0.02em;
+        margin-bottom: 4px;
+        text-wrap: nowrap;
+    }
+
+    /* サステナビリティの部分、ここだけ調整が必要だった */
+    section.top-business h2.top-business-envheading {
+        font-size: 32px;
+        line-height: 50px;
+        letter-spacing: 0.02em;
+    }
+
+    span.top-business-envheading-dot {
+        letter-spacing: -0.28em;
+    }
+
+    /* 英語見出しのフォント */
+    section.top-business h3 {
+        font-family: DM Sans;
+        font-size: 1rem;
+        line-height: 1rem;
+        letter-spacing: 0.08em;
+    }
+
+    /* トップページ：4つの事業と展望 横４つに並んだコラム */
+    div.top-four-business {
+        display: flex;
+        flex-flow: column;
+            /* 縦積みに変更 */
+        justify-content: space-between;
+        margin-bottom: 0px;
+            /* 指定キャンセル */
+        }
+
+    /* 4つに並んだコラムでのコンテナ設定 */
+    div.top-business-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+
+    div.top-business-item-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4つに並んだコラムでのコンテナ内の画像と文字 */
+    div.top-business-item-img {
+        position: relative;
+    }
+
+    /* 画像の左上に赤四角と白文字 */
+    div.top-business-item-img p {
+        position: absolute;
+        background-color: #BC0000;
+        color: #fff;
+        font-weight: 500;
+        line-height: 26px;
+        text-align: center;
+        padding: 6px 9px 6px 9px;
+        top: 0;
+        left: 0;
+    }
+
+    /* コラムにある画像のサイズ、コラム幅に合わせる */
+    .business-item-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+    div.top-business-item img.isPC {
+        display: none;  /* PC 版を非表示とし */
+    }
+    div.top-business-item img.isSP {
+        display: block; /* SP 版を表示に戻す */
+    }
+        /* PC 版の css を基準に SP 仕様を上書きする構成のようなので */
+        /* 美しくないなぁと思いつつもこういう記述にするしか・・・   */
+        /* 2024.02.09 by SP 版整形担当者                        */
+
+    /* トップページ：4つの事業と展望 サステナビリティ*/
+    div.top-sustainability {
+        position: initial;
+            /* 通常表示に戻す */
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column-reverse;
+            /* 縦積み逆順（画像を先）に変更 */
+        margin-bottom: 0px;
+    }
+
+    div.top-sustainability-explain {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    /* SP 版ではサステナビリティの解説は非表示 */
+    div.top-sustainability-explain p.top-sustainability-p {
+        display: none;
+    }
+
+    /* サステナビリティの風車画像 */
+    /* ページの右側に合わせるようにする */
+
+    div.top-sustainability {
+        padding: 2rem 1rem;
+    }
+
+    div.top-sustainability-img {
+        position: initial;
+            /* 通常表示に戻す */
+        top: 0;
+        left: 0;
+            /* 指定キャンセル */
+    }
+
+    .top-sustainability-img {
+        padding-left: 0;
+    }
+
+    .sustainability-img {
+        width: 100%;
+        height: auto;
+    }
+    div.top-sustainability img.isPC {
+        display: none;  /* PC 版を非表示とし */
+    }
+    div.top-sustainability img.isSP {
+        display: block; /* SP 版を表示に戻す */
+    }
+
+
+    a.mouse-button.mouse-button-wh , .mouse-button.slogan-button, .sustainability-button , a.mouse-button , a.mouse-button.sustainability-button {
+        display: flex;
+    }
+        /* PC 版の css を基準に SP 仕様を上書きする構成のようなので */
+        /* 美しくないなぁと思いつつもこういう記述にするしか・・・   */
+        /* 2024.02.09 by SP 版整形担当者                        */
+
+    /* トップページ：フッターのうえに張り付ける赤い曲線 */
+    .top-group-footer1 {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+            /* 指定キャンセル */
+        z-index: 0;
+    }
+
+    .top-group-footer2 {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+            /* 指定キャンセル */
+        z-index: 0;
+    }
+
+
+    /* フッター-sp */
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        height: 420px;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* フッター-sp：日揮触媒化成の情報 */
+    /* 郵便、住所、コピーライト非表示 */
+    div.footer-information p {
+        display: none;
+    }
+
+    /* フッター-sp：ロゴ */
+    div.footer-information img {
+        width: 156px;
+        height: auto;
+        margin-bottom: 28.83px;
+    }
+
+    /* フッター：ナビゲーション */
+    div.footer-nav {
+        flex-direction: column;
+    }
+
+    /* フッター：ナビゲーション */
+    /* 一部はページがトップページかどうかで表示するか変化する */
+    .footer-nav-list {
+        margin-bottom: 33px;
+    }
+
+    /* .footer-nav-list div {
+        align-self: center;
+    } */
+
+    .footer-nav-list li {
+        margin: 11px 20px;
+    }
+
+    .footer-nav-list li a {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .footer-nav-list-item-pc {
+        display: none;
+    }
+
+    div.footer-nav-contact {
+        align-self: center;
+        margin-bottom: 0;
+    }
+
+    /* フッターのボタン */
+    /* フッターのボタンにあるメールアイコン */
+    .footer-nav-contact img {
+        width: 18.75px;
+        height: auto;
+        margin-right: 13.75px;
+    }
+
+    /* フッター：日揮触媒化成の情報 */
+    /* spのコピーライト表示 */
+    .footer-information-copyright-sp {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+    ul.slick-dots {
+        position: absolute;
+        z-index: 10;
+        bottom: -5%;
+    }
+
+    main.top h1 {
+        font-family: DM Sans;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 40px;
+        /* position: relative; */
+        display: flex;
+        margin-top: 40px;
+    }
+
+}
+
+
+
+@media (min-width:769px) and (max-width:1400px) {
+    ul.slick-dots {
+        position: absolute;
+        z-index: 10;
+        bottom: -50%;
+    }
+}

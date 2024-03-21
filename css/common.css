@@ -1,0 +1,813 @@
+@charset "utf-8";
+
+/* 
+font-family: 'DM Sans', sans-serif;
+font-family: 'M PLUS Code Latin', monospace;
+font-family: 'Noto Sans JP', sans-serif; 
+*/
+
+/* ---------------------------------- */
+/* HTMLの設定 */
+/* ヘッダーとフッターのCSS */
+/* ---------------------------------- */
+
+
+/* ---------------------------------- */
+/* ページ全体 */
+/* ---------------------------------- */
+
+/* 基本的に Noto Sans JP 400の18pxフォント */
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0em;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+/* 箇条書き部分は点はなし。 */
+html ul {
+    list-style: none;
+}
+
+/* 基本的に下線による飾りつけはない。 */
+a {
+    text-decoration: none;
+}
+
+/* 対応言語でない場合は見せない */
+html[lang='ja'] *:is([lang]):not([lang='ja']),
+html[lang='en'] *:is([lang]):not([lang='en']) {
+    display: none !important;
+}
+
+/* メイン */
+main {
+    position: relative;
+}
+
+/* ---------------------------------- */
+/* ヘッダー */
+/* ---------------------------------- */
+
+/* ヘッダーの構成内容 */
+/* 高さ100px、ロゴとナビメニューを両端に置く flex-end */
+.header-links {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .9) 0%, rgba(0, 0, 0, .35) 100%);
+    z-index: 1000;
+}
+
+/* ヘッダー：日揮触媒化成のロゴ */
+
+/* 日揮触媒化成のロゴのサイズ */
+.logo-nikki {
+    width: 230px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* ヘッダー：ナビ（現在、レスポンシブル対応はしていない） */
+.header-navigation {
+    align-self: center;
+    padding-right: 3%;
+}
+
+/* ナビの2つのリストは縦に並べる */
+.header-navigation div {
+    justify-content: flex-end;
+}
+
+.header-navigation li {
+    display: inline;
+    align-self: center;
+}
+
+/* ナビの中身は a タグなので、改めて設定する。 */
+.header-navigation li a {
+    color: #fff;
+}
+
+/* ナビ：お問い合わせと英語 */
+.header-navigation-contact {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
+}
+
+.header-navigation-contact li {
+    margin-left: 26px;
+}
+
+/* ナビのリストの中のメール、地球アイコンのサイズ */
+.header-navigation-contact img {
+    width: 13px;
+    height: auto;
+    margin-right: 3px;
+}
+
+/* ナビのリストの言語 */
+.header-navigation-contact button {
+    border: none;
+    background: none;
+    color: #fff;
+}
+
+/* ナビのリスト：flex で横並びにして、ウィンドウ幅に応じて2段にする */
+.header-navigation-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-navigation-list li {
+    margin-left: 40px;
+}
+
+/* ヘッダー：ナビ リストの中の虫眼鏡アイコンのサイズ */
+img.header-navigation-list-search-pc {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+/* ヘッダー：ハンバーガーメニュー pcの場合非表示 */
+button.header-hamburger {
+    display: none;
+}
+
+/* ヘッダー：トップページの背景（地球） */
+header.top {
+    /* background-image: url("./img/background-top.png"); */
+    background-color: #000;
+    background-position-y: 11.67%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100%;
+    /* aspect-ratio: 1920 / 857; */
+}
+
+/* ヘッダー：ニュースページの背景（工場） */
+/* header.news {
+    background-image: url("./img/background-news.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 3840 / 1320;
+} */
+
+/* ヘッダー：ニュースページの透過黒 */
+/* ヘッダーはある程度の高さになるように調整 */
+/* header.news div.opacity-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+    aspect-ratio: 1920 / 660;
+    min-height: 450px;
+    max-width: 100%; */
+/* } */
+
+/* ヘッダー：製品群一覧-用途の背景 */
+header.product {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 3840 / 1320;
+}
+
+header.product.cataclyst {
+    background-image: url("./img/header/image-product-bg-cataclyst.png");
+}
+
+header.product.chemistry {
+    background-image: url("./img/header/image-product-bg-chemistry.png");
+}
+
+/* ヘッダー：製品群一覧-用途の透過黒 */
+/* ヘッダーはある程度の高さになるように調整 */
+header.product div.opacity-cover {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* height: 660px; */
+    aspect-ratio: 1920 / 660;
+    min-height: 450px;
+    max-width: 100%;
+}
+
+
+/* ヘッダー：サムネイルタイトル */
+.thumbnail {
+    padding-left: 10.67%;
+}
+
+/* トップページ：ナノから世界を変える */
+.thumbnail.top-thumbnail {
+    display: block;
+    padding-top: 109px;
+    /* padding-left: 173px; */
+    width: 800px;
+}
+
+.thumbnail:not(.top-thumbnail) {
+    padding-top: 70px;
+}
+
+/* ヘッダー（トップページ）：タイトル */
+.top-thumbnail-title {
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 112px;
+    text-align: center;
+}
+
+/* ヘッダー（その他）：パンくずリスト */
+.other-breadcumb {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.other-breadcumb p {
+    font-size: 24px;
+    line-height: 70px;
+}
+
+.other-breadcumb img {
+    width: auto;
+    height: 25px;
+}
+
+/* ヘッダー（その他）：タイトル */
+.other-thumbnail-title {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 90px;
+}
+
+/* ヘッダー（製品群一覧 - 用途）：タイトル */
+.product-thumbnail-title {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 56px;
+}
+
+/* トップページ：スローガンとニュースページの曲線カバー */
+img.top-thumbnail-curve {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+/* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+section.news-thumbnail {
+    /* width: 41.56%; */
+    max-width: 798px;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 89.6px;
+    padding-top: 72px;
+}
+
+/* お知らせ：検索エリアがつく場合、space-between */
+section.news-search-thumbnail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding-right: 40px;
+}
+
+/* お知らせ - 検索エリア pc */
+section.news-search-thumbnail input {
+    width: 23.95%;
+    min-width: 300px;
+    height: 41px;
+    border-radius: 44px;
+    border: 1px;
+    box-shadow: 0px 0px 20px 0px #00000026;
+    background-image: url("./img/Icon-search-gray.svg");
+    background-repeat: no-repeat;
+    background-position: 95%;
+    font-size: 24px;
+    padding-left: 15px;
+}
+
+/* トップページ以外のヘッダーの赤曲線 */
+.header-image-curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+/* ----------------------------------- */
+/* フッター */
+/* ----------------------------------- */
+footer {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    height: 280px;
+    z-index: 1;
+}
+
+/* フッター：日揮触媒化成の情報 */
+div.footer-information {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    font-size: 12px;
+    line-height: 20px;
+
+}
+
+/* フッター：ロゴ */
+div.footer-information img {
+    margin-bottom: 28.83px;
+}
+
+/* フッター：コピーライト */
+p.footer-information-copyright {
+    margin: 19px auto 19px 0;
+}
+
+
+/* フッター：ナビゲーション */
+div.footer-nav {
+    display: flex;
+}
+
+/* フッター：ナビゲーション */
+/* 一部はページがトップページかどうかで表示するか変化する */
+.footer-nav-list {
+    align-self: center;
+    display: flex;
+}
+
+.footer-nav-list div {
+    align-self: center;
+}
+
+.footer-nav-list li {
+    margin: 12px 28px;
+}
+
+.footer-nav-list li a {
+    font-size: 16px;
+    line-height: 23px;
+    text-align: left;
+    color: #fff;
+}
+
+div.footer-nav-contact {
+    align-self: flex-end;
+    margin-bottom: 50px;
+}
+
+div.footer-nav-contact a {
+    display: block;
+    width: 168px;
+    height: 50px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    position: relative
+}
+
+
+
+div.news-article-links-button {
+    display: flex;
+    align-items: center;
+}
+
+a.news-article-links-left div.news-article-links-button {
+    justify-content: flex-start;
+}
+
+a.news-article-links-right div.news-article-links-button {
+    justify-content: flex-end;
+}
+
+div.news-article-links-button-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 76px;
+}
+
+/* フッターのボタン */
+.footer-nav-contact p {
+    font-size: 16px;
+    line-height: 50px;
+    letter-spacing: 0em;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* フッターのボタンにあるメールアイコン */
+.footer-nav-contact img {
+    width: 18.75px;
+    height: auto;
+    margin-right: 13.75px;
+}
+
+/* フッター：日揮触媒化成の情報 */
+.footer-information img {
+    width: 200px;
+}
+
+
+/* spのコピーライト非表示 */
+.footer-information-copyright-sp {
+    display: none;
+}
+
+/* ------------------------------- */
+/* レスポンシブル設定 */
+/* ------------------------------- */
+@media screen and (max-width: 599px) {
+
+    /* 全体フォント設定-sp */
+    /* styleName: SP用16px; */
+    html {
+        font-family: Noto Sans JP;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+    }
+
+    /* ヘッダーの高さ-sp */
+    header {
+        height: 75px;
+    }
+
+    /* ボタン設定sp：横幅を100% */
+    .mouse-button {
+        display: block;
+        width: 100%;
+        /* margin-top: 34px;
+        margin-bottom: 83px; */
+        position: relative;
+    }
+
+    /* ヘッダーのロゴの赤い部分 */
+    /* トップページの場合、 */
+    .header-links::before {
+        content: url("./img/Top-RedRectangle-sp.svg");
+        /* height: 50%; */
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+
+    /* 見出しsp */
+    h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /* ヘッダー：日揮触媒化成のロゴ */
+    div.logo-container::before {
+        display: none;
+    }
+
+    .logo-nikki {
+        width: 150px;
+        height: 75px;
+    }
+
+    /* 日揮触媒化成のロゴの配置、ヘッダーの中心に置く */
+    div.logo-container {
+        width: 138px;
+        top: 30px;
+        left: 16px;
+    }
+
+    /* ヘッダー：ハンバーガーメニュー */
+    .header-links {
+        align-items: center;
+        padding-right: 20px;
+        height: 75px;
+    }
+
+    .header-links nav {
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 343px;
+        padding-top: 101px;
+        /* padding-bottom: 100px; */
+        /* margin-top: -40px; */
+        transform: translateX(100%);
+        background-color: #000;
+        transition: ease .4s;
+    }
+
+    .header-navigation li:nth-child(-n+2) {
+        display: inline;
+    }
+
+    .header-links nav.active {
+        transform: translateX(0%);
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
+
+    /* ハンバーガーメニューのボタン */
+    button.header-hamburger {
+        display: inline;
+        width: 42px;
+        height: 42px;
+        background-color: transparent;
+        border-color: transparent;
+        z-index: 9999;
+        margin-right: 3%;
+    }
+
+    header.news {
+        /* background-color: white; */
+        width: 100%;
+        height: 50px;
+        /* position: fixed; */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    header.active {
+        z-index: 999;
+    }
+
+    header.active img.top-thumbnail-curve {
+        display: none;
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: relative;
+        transition: ease .4s;
+        display: block;
+    }
+
+    /* ヘッダー：ハンバーガーメニューのボタン */
+    .hamburger span:nth-child(1) {
+        top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+        margin: 6px 0;
+    }
+
+    .hamburger span:nth-child(3) {
+        top: 0;
+    }
+
+    /* ヘッダー：ハンバーガーメニューのボタン操作 */
+    .hamburger.active span:nth-child(1) {
+        top: 4px;
+        transform: rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        top: -12px;
+        transform: rotate(-45deg);
+    }
+
+    /* ヘッダー：ハンバーガーメニューの表示 */
+    .header-navigation li {
+        display: block;
+        /* text-align: center; */
+        /* color: black; */
+        width: 100%;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+
+    .header-navigation div:last-chid li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ヘッダー：ナビ（現在、レスポンシブル対応はしていない） */
+    .header-navigation {
+        align-self: center;
+    }
+
+    /* ナビの2つのリストは縦に並べる */
+    .header-navigation div {
+        justify-content: flex-end;
+    }
+
+    .header-navigation li {
+        display: inline;
+        align-self: center;
+    }
+
+    /* spタグでは背景は白なので黒で設定 */
+    /* ナビの中身は a タグなので、改めて設定する。 */
+    .header-navigation li a {
+        font-size: 16px;
+    }
+
+    /* ナビ：お問い合わせと英語 */
+    .header-navigation-contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 12px;
+    }
+
+    .header-navigation-contact li {
+        text-align: center;
+    }
+
+    /* 問い合わせのみボタン */
+    .header-navigation-contact li a {
+        border: 1px solid #fff;
+        border-radius: 40px;
+        padding: 3% 8%;
+    }
+
+    .header-navigation-contact li:first-child img {
+        width: 16px;
+        height: auto;
+        /* margin: 16px; */
+    }
+
+    /* 言語のみハンバーガーで非表示 */
+    .header-navigation-contact li:last-child {
+        display: none;
+    }
+
+    /* ナビのリストの中のメール、地球アイコンのサイズ */
+    .header-navigation-contact img {
+        width: 13px;
+        height: auto;
+    }
+
+    /* ナビのリスト：flex で横並びにして、ウィンドウ幅に応じて2段にする */
+    .header-navigation-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .header-navigation-list li {
+        margin-left: 64px;
+        margin-bottom: 16px;
+    }
+
+    /* ヘッダー：ナビ リストの中の虫眼鏡アイコンのサイズ */
+    /* pc画像は非表示にする。 */
+    img.header-navigation-list-search-pc {
+        display: none;
+    }
+
+
+    /* ヘッダー：背景画像 */
+    /* ヘッダー-sp：トップページの背景（地球） */
+    header.top {
+        height: 75px;
+    }
+
+    /* ヘッダー-sp：ニュースページの背景（工場） */
+    header.news {
+        height: 224px;
+    }
+
+    /* ヘッダー：ニュースページの透過黒 */
+    header.news div.opacity-cover {
+        height: 100%;
+    }
+
+    /* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+    section.top-thumbnail {
+        width: 100%;
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 0px;
+    }
+
+    /* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+    p.thumbnail-english {
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    /* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+    section.news-thumbnail {
+        width: 100%;
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 0px;
+    }
+
+    section.thumbnail {
+        padding: 0;
+    }
+
+    section.thumbnail p {
+        width: 70%;
+        padding: 0 15%;
+    }
+
+    /* お知らせ、お知らせ詳細：サムネイルタイトルフォント */
+    section.news-search-thumbnail input {
+        display: none;
+    }
+
+    /* フッター-sp */
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        height: 420px;
+        /* z-index: 1; */
+    }
+
+    /* フッター-sp：日揮触媒化成の情報 */
+
+    /* 郵便、住所、コピーライト非表示 */
+    div.footer-information p {
+        display: none;
+    }
+
+    /* フッター-sp：ロゴ */
+    div.footer-information img {
+        width: 156px;
+        height: auto;
+        margin-bottom: 28.83px;
+    }
+
+    /* フッター：ナビゲーション */
+    div.footer-nav {
+        flex-direction: column;
+    }
+
+    /* フッター：ナビゲーション */
+    /* 一部はページがトップページかどうかで表示するか変化する */
+    .footer-nav-list {
+        margin-bottom: 33px;
+    }
+
+    /* .footer-nav-list div {
+        align-self: center;
+    } */
+
+    .footer-nav-list li {
+        margin: 11px 20px;
+    }
+
+    .footer-nav-list li a {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    div.footer-nav-contact {
+        align-self: center;
+        margin-bottom: 0;
+    }
+
+    /* フッターのボタン */
+    /* フッターのボタンにあるメールアイコン */
+    .footer-nav-contact img {
+        width: 18.75px;
+        height: auto;
+        margin-right: 13.75px;
+    }
+
+    /* フッター：日揮触媒化成の情報 */
+    /* spのコピーライト表示 */
+    .footer-information-copyright-sp {
+        display: block;
+        text-align: center;
+        font-size: 12px;
+        line-height: 50px;
+    }
+
+}
